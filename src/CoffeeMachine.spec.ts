@@ -59,4 +59,15 @@ describe(CoffeeMachine, () => {
 
     expect(drinkMakerSpy).toHaveBeenCalledWith("T:2:0")
   })
+
+  it("makes a hot chocolate without sugar", () => {
+    const drinkMaker = new DrinkMaker()
+    const drinkMakerSpy = vitest.spyOn(DrinkMaker.prototype, "execute")
+    const coffeeMachine = new CoffeeMachine(drinkMaker)
+
+    coffeeMachine.selectChocolate()
+    coffeeMachine.makeDrink()
+
+    expect(drinkMakerSpy).toHaveBeenCalledWith("H::")
+  })
 })

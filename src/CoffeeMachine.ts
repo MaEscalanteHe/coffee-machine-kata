@@ -13,6 +13,8 @@ export class CoffeeMachine {
     this.drink = "T"
   }
 
+  selectChocolate() {}
+
   addOneSugar() {
     this.sugarAmount = "1"
     this.withStick = "0"
