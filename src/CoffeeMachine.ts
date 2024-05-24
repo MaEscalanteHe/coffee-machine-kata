@@ -1,12 +1,17 @@
 export class CoffeeMachine {
   private withStick: string = ""
   private sugarAmount: string = ""
+  private drink: string = ""
 
   constructor(private drinkMaker: DrinkMaker) {}
 
-  selectCoffee() {}
+  selectCoffee() {
+    this.drink = "C"
+  }
 
-  selectTea() {}
+  selectTea() {
+    this.drink = "T"
+  }
 
   addOneSugar() {
     this.sugarAmount = "1"
@@ -19,7 +24,7 @@ export class CoffeeMachine {
   }
 
   makeDrink() {
-    this.drinkMaker.execute(`C:${this.sugarAmount}:${this.withStick}`)
+    this.drinkMaker.execute(`${this.drink}:${this.sugarAmount}:${this.withStick}`)
   }
 }
 
