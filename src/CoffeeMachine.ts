@@ -6,6 +6,8 @@ export class CoffeeMachine {
 
   selectCoffee() {}
 
+  selectTea() {}
+
   addOneSugar() {
     this.sugarAmount = "1"
     this.withStick = "0"
