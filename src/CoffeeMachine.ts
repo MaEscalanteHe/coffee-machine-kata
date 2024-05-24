@@ -6,6 +6,8 @@ export class CoffeeMachine {
   makeDrink() {
     this.drinkMaker.execute("")
   }
+
+  addOneSugar() {}
 }
 
 export class DrinkMaker {
