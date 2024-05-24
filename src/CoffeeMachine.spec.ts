@@ -24,4 +24,16 @@ describe(CoffeeMachine, () => {
 
     expect(drinkMakerSpy).toHaveBeenCalledWith("C:1:0")
   })
+
+  it("makes a coffee with two sugar", () => {
+    const drinkMaker = new DrinkMaker()
+    const drinkMakerSpy = vitest.spyOn(DrinkMaker.prototype, "execute")
+    const coffeeMachine = new CoffeeMachine(drinkMaker)
+
+    coffeeMachine.selectCoffee()
+    coffeeMachine.addTwoSugar()
+    coffeeMachine.makeDrink()
+
+    expect(drinkMakerSpy).toHaveBeenCalledWith("C:2:0")
+  })
 })

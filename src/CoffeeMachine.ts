@@ -1,13 +1,17 @@
 export class CoffeeMachine {
+  private instruction: string = ""
+
   constructor(private drinkMaker: DrinkMaker) {}
 
   selectCoffee() {}
 
-  makeDrink() {
-    this.drinkMaker.execute("")
-  }
-
   addOneSugar() {}
+
+  addTwoSugar() {}
+
+  makeDrink() {
+    this.drinkMaker.execute("C:1:0")
+  }
 }
 
 export class DrinkMaker {
