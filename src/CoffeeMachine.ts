@@ -1,9 +1,13 @@
-export class CoffeMachine {
-  selectCoffee() {
-    throw new Error()
-  }
+export class CoffeeMachine {
+  constructor(private drinkMaker: DrinkMaker) {}
+
+  selectCoffee() {}
 
   makeDrink() {
-    throw new Error()
+    this.drinkMaker.execute("")
   }
+}
+
+export class DrinkMaker {
+  execute(instruction: string) {}
 }

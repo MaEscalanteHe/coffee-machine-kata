@@ -1,11 +1,15 @@
-import { describe, it, expect } from "vitest"
-import { CoffeMachine } from "./CoffeeMachine.js"
+import { describe, it, expect, vitest } from "vitest"
+import { CoffeeMachine, DrinkMaker } from "./CoffeeMachine.js"
 
-describe(CoffeMachine, () => {
-  it("make a coffee", () => {
-    let coffeMachine = new CoffeMachine()
+describe(CoffeeMachine, () => {
+  it("called drink maker", () => {
+    const drinkMaker = new DrinkMaker()
+    const drinkMakerSpy = vitest.spyOn(DrinkMaker.prototype, "execute")
+    const coffeMachine = new CoffeeMachine(drinkMaker)
 
     coffeMachine.selectCoffee()
     coffeMachine.makeDrink()
+
+    expect(drinkMakerSpy).toHaveBeenCalledOnce()
   })
 })
