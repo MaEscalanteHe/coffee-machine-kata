@@ -1,4 +1,4 @@
-import { describe, it, expect, vitest } from "vitest"
+import { describe, expect, it, vitest } from "vitest"
 import { CoffeeMachine, DrinkMaker } from "./CoffeeMachine.js"
 
 describe(CoffeeMachine, () => {
