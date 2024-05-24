@@ -1,20 +1,23 @@
 export class CoffeeMachine {
-  private instruction: string = ""
-
-  private withTwoSugar: boolean = false
+  private withStick: string = ""
+  private sugarAmount: string = ""
 
   constructor(private drinkMaker: DrinkMaker) {}
 
   selectCoffee() {}
 
-  addOneSugar() {}
+  addOneSugar() {
+    this.sugarAmount = "1"
+    this.withStick = "0"
+  }
 
   addTwoSugar() {
-    this.withTwoSugar = true
+    this.sugarAmount = "2"
+    this.withStick = "0"
   }
 
   makeDrink() {
-    this.drinkMaker.execute(`C:${this.withTwoSugar ? "2" : "1"}:0`)
+    this.drinkMaker.execute(`C:${this.sugarAmount}:${this.withStick}`)
   }
 }
 
